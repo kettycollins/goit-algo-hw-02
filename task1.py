@@ -27,13 +27,11 @@ def process_request():
         print("Черга пуста")
 
 # Головний цикл програми
-while True:
-    #Поки користувач не вийде з програми:
-    if input("Введіть 'q', щоб вийти: ") == "q":
-        break
-    
-    else:
+try:
+    while True:
         # Виконати generate_request() для створення нових заявок
         generate_request()
         # Виконати process_request() для обробки заявок
         process_request()
+except KeyboardInterrupt:
+    print("Програму завершено користувачем.")
